@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/dashboard'
-
   get "/users/sign_in", to: redirect("/")
   devise_for :users, controllers: {
     sessions: 'users/sessions',
@@ -11,5 +9,6 @@ Rails.application.routes.draw do
     get '/sign_up' => 'users/registrations#new'
   end
   get '/dashboard' => "users#dashboard", as: :user_root
+  post 'start_session' => "users#start_session"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

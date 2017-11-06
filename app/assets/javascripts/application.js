@@ -26,5 +26,5 @@ function close_flash_message(){
     $(this).closest('.message').transition('fly right');
   });
   $('.message.flash').transition('jiggle');
-  setTimeout(function(){$('.message.flash').transition('fly right');}, 3000)
+  setTimeout(function(){$('.message.flash:not(".hidden")').transition('fly right');}, 3000)
 }

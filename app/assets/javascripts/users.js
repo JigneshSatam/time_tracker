@@ -5,6 +5,14 @@
 $(document).ready(function(){
   setDate();
   setInterval(GetClock, 1200);
+
+  $("#start_session").click(function(){
+    $.ajax({
+      type: "POST",
+      url: window.location.origin + "/start_session",
+      dataType: "script"
+    });
+  });
 });
 tday = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
 tmonth = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
@@ -40,3 +48,4 @@ function GetClock(){
   $(".change").removeClass("change");
   // document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+"";
 }
+
