@@ -1,0 +1,8 @@
+.ui.grey.three.item.inverted.massive.menu
+  .item
+    %i.user.icon
+    =current_user.username.capitalize
+  .item
+  = link_to "logout", destroy_user_session_path, method: "delete", class: "item"
+  / .right.menu
+

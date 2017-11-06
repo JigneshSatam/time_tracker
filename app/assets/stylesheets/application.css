@@ -29,3 +29,13 @@ body > .grid {
 body > .ui.login .image.header img{
   width: 4em;
 }
+
+.ui.flash.message{
+  margin: 0 auto !important;
+  top: 0;
+  width: 60%;
+  right: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}

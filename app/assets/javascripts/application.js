@@ -16,3 +16,13 @@
 //= require turbolinks
 //= require semantic_ui/semantic_ui
 //= require_tree .
+
+$(document).ready(function(){
+  close_flash_message();
+});
+
+function close_flash_message(){
+  $('.message .close').on('click', function() {
+    $(this).closest('.message').transition('fade');
+  });
+}
