@@ -23,6 +23,8 @@ $(document).ready(function(){
 
 function close_flash_message(){
   $('.message .close').on('click', function() {
-    $(this).closest('.message').transition('fade');
+    $(this).closest('.message').transition('fly right');
   });
+  $('.message.flash').transition('jiggle');
+  setTimeout(function(){$('.message.flash').transition('fly right');}, 3000)
 }

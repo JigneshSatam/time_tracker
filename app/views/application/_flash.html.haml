@@ -1,0 +1,5 @@
+- message = flash[:alert].present? ? flash[:alert] : flash[:notice]
+- klass = flash[:alert].present? ? 'negative' : "info"
+.ui.floating.compact.message.flash{class: klass}
+  %i.close.icon
+  .header=message
