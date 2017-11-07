@@ -68,3 +68,6 @@ gem 'jquery-rails'
 
 # Haml
 gem 'haml'
+
+# Pagination
+gem 'kaminari'

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get '/sign_up' => 'users/registrations#new'
   end
   get '/dashboard' => "users#dashboard", as: :user_root
-  post 'start_session' => "users#start_session"
+  post '/start_session' => "users#start_session"
+  get '/get_daily_sessions' => "users#get_daily_sessions"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

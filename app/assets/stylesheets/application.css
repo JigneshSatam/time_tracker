@@ -18,7 +18,7 @@ body {
   background-color: #DADADA;
 }
 
-body > .grid {
+body > .grid.login {
     height: 100%;
 }
 

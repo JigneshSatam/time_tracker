@@ -24,7 +24,7 @@
                 %p :
               .ui.segment#ss
                 %p
-        .ui.bottom.attached.button#start_session
+        .ui.bottom.attached.button#start_session{class: (@disable_session_button ? ' disabled' : "").to_s}
           %i.hourglass.start.icon
           Start Session
     .column
@@ -54,3 +54,8 @@
                   added two pictures
         .extra.content
           %button.ui.button Join Project
+
+.ui.centered.grid
+  .ten.wide.column#daily_session
+    %button.fluid.ui.black.button#daily_session_show
+      Daily Sessions

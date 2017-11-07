@@ -1,0 +1,18 @@
+%table.ui.celled.center.aligned.table
+  %thead
+    %tr
+      %th{colspan: 2}
+        Daily Sessions
+    %tr
+      %th Date
+      %th Time
+  %tbody
+    - daily_sessions_time.pluck(:created_at).each do |time|
+      - local_time = time.localtime
+      %tr
+        %td= local_time.strftime("%A, %e %B, %Y")
+        %td= local_time.strftime("%I:%M:%S %P")
+  %tfoot
+    %tr
+      %th{colspan: 2}
+        = paginate daily_sessions_time, remote: true, params: {controller: 'users', action: 'get_daily_sessions'}

@@ -4,7 +4,7 @@
 
 $(document).ready(function(){
   setDate();
-  setInterval(GetClock, 1200);
+  setInterval(GetClock, 1000);
 
   $("#start_session").click(function(){
     $.ajax({
@@ -12,6 +12,10 @@ $(document).ready(function(){
       url: window.location.origin + "/start_session",
       dataType: "script"
     });
+  });
+
+  $("#daily_session_show").click(function(){
+    get_daily_sessions_table();
   });
 });
 tday = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
@@ -49,3 +53,10 @@ function GetClock(){
   // document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+"";
 }
 
+function get_daily_sessions_table(){
+  $.ajax({
+    type: "GET",
+    url: window.location.origin + "/get_daily_sessions",
+    dataType: "script"
+  });
+}
