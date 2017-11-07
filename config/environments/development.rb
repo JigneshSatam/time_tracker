@@ -58,8 +58,8 @@ Rails.application.configure do
     :address =>  "smtp.sendgrid.net",
     :port =>  587,
     :domain =>  "time-tracker-exercise.herokuapp.com",
-    :user_name =>  "app80532757@heroku.com",
-    :password =>  "9ywfgujf3471",
+    :user_name =>  ENV["USERNAME"],
+    :password =>  ENV["PASSWORD"],
     :authentication => :plain,
     :enable_starttls_auto =>  true
   }
