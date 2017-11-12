@@ -3,3 +3,4 @@ $(".message.flash").remove();
 $("body").append("#{escape_javascript(render :partial => 'flash')}");
 close_flash_message();
 $("#daily_session").html("#{j (render partial: "daily_session_table", locals: {daily_sessions_time: @daily_sessions_time})}")
+$("#month_avg_sessions").html("#{j (render partial: "month_avg_sessions", locals: {average_time: @average_time})}")

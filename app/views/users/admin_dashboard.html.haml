@@ -1,0 +1,15 @@
+.ui.column.centered.grid
+  .column
+    .ui.raised.centered.card
+      .content
+        .header.center.aligned Today's Late Users
+      .content.center.aligned
+        %h1
+          = @todays_late_users_count
+  / .column#month_avg_sessions
+  /   = render partial: "month_avg_sessions", locals: { average_time: @average_time }
+
+.ui.centered.grid
+  .ten.wide.column#daily_session
+    %button.fluid.ui.black.button#daily_session_show
+      Daily Sessions

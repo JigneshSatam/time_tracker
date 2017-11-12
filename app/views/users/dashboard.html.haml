@@ -1,59 +1,33 @@
 .ui.three.column.centered.grid
-  .ui.centered.row
-    .column
-      .ui.raised.centered.card
-        .content
-          .header.center.aligned Current Time
-        .content
-          .description#clockbox
-            .ui.horizontal.segments.date
-              .ui.grey.center.aligned.segment#day
-                %p
-              .ui.grey.center.aligned.segment#month
-                %p
-              .ui.grey.center.aligned.segment#year
-                %p
-            .ui.center.aligned.horizontal.segments.time
-              .ui.segment#hh
-                %p
-              .ui.grey.inverted.segment
-                %p :
-              .ui.segment#mm
-                %p
-              .ui.grey.inverted.segment
-                %p :
-              .ui.segment#ss
-                %p
-        .ui.bottom.attached.button#start_session{class: (@disable_session_button ? ' disabled' : "").to_s}
-          %i.hourglass.start.icon
-          Start Session
-    / .column
-    /   .ui.centered.card
-    /     .content
-    /       .header Project Timeline
-    /     .content
-    /       %h4.ui.sub.header Activity
-    /       .ui.small.feed
-    /         .event
-    /           .content
-    /             .summary
-    /               %a Elliot Fu
-    /               added
-    /               %a Jenny Hess
-    /               to the project
-    /         .event
-    /           .content
-    /             .summary
-    /               %a Stevie Feliciano
-    /               was added as an
-    /               %a Administrator
-    /         .event
-    /           .content
-    /             .summary
-    /               %a Helen Troy
-    /               added two pictures
-    /     .extra.content
-    /       %button.ui.button Join Project
+  .column
+    .ui.raised.centered.card
+      .content
+        .header.center.aligned Current Time
+      .content
+        .description#clockbox
+          .ui.horizontal.segments.date
+            .ui.grey.center.aligned.segment#day
+              %p
+            .ui.grey.center.aligned.segment#month
+              %p
+            .ui.grey.center.aligned.segment#year
+              %p
+          .ui.center.aligned.horizontal.segments.time
+            .ui.segment#hh
+              %p
+            .ui.grey.inverted.segment
+              %p :
+            .ui.segment#mm
+              %p
+            .ui.grey.inverted.segment
+              %p :
+            .ui.segment#ss
+              %p
+      .ui.bottom.attached.button#start_session{class: (@disable_session_button ? ' disabled' : "").to_s}
+        %i.hourglass.start.icon
+        Start Session
+  .column#month_avg_sessions
+    = render partial: "month_avg_sessions", locals: { average_time: @average_time }
 
 .ui.centered.grid
   .ten.wide.column#daily_session

@@ -1,0 +1,10 @@
+.ui.raised.centered.card
+  .content
+    .header.center.aligned Mothly Average Session Time
+  .content.center.aligned
+    - if average_time.present?
+      %h1
+        = average_time
+    - else
+      .header
+        No session started.
